@@ -7,9 +7,7 @@ using namespace std;
 //
 
 D3DXMATRIX PositionFinder(float length, float previous_length, float objects_[],
-						  float degree, string direction);
-//(float length, float lengthBefore, float elementPosition[], float degreeOrigin,
-//float degreeFinal, string directionOrigin, string direction)
+			  float degree, string direction);
 
 int n = 14;
 
