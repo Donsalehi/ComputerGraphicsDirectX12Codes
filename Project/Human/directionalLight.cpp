@@ -1,17 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////
-// 
-// File: directionalLight.cpp
-// 
-// Author: Frank Luna (C) All Rights Reserved
-//
-// System: AMD Athlon 1800+ XP, 512 DDR, Geforce 3, Windows XP, MSVC++ 7.0 
-//
-// Desc: Demonstrates using a directional light with D3DX objects.  You can orbit
-//       the scene using the left and right arrow keys.  In addition you can 
-//       elevate the camera with the up and down arrow keys.
-//          
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include "d3dUtility.h"
 
 using namespace std;
@@ -20,10 +6,10 @@ using namespace std;
 // Globals
 //
 
-D3DXMATRIX PositionFinder(float length, float lengthBefore, float elementPosition[], float degreeOrigin,
-	float degreeFinal, string directionOrigin, string directionFinal);
-
-//void CreatePlane(D3DXVECTOR3 normal, float distance, D3DXPLANE* plane);
+D3DXMATRIX PositionFinder(float length, float previous_length, float objects_[],
+						  float degree, string direction);
+//(float length, float lengthBefore, float elementPosition[], float degreeOrigin,
+//float degreeFinal, string directionOrigin, string direction)
 
 int n = 14;
 
@@ -35,6 +21,7 @@ const int Height = 720;
 ID3DXMesh* Objects[18] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 D3DXMATRIX  Worlds[18];
 D3DMATERIAL9 Mtrls[18];
+
 //degree to rotation hands and legs
 float rotation_degree = 0.0f;
 
@@ -61,13 +48,6 @@ void translate(D3DXMATRIX* base, float x, float y, float z) {
 
 //function for walking on the x axis
 void walkX(string direction) {
-	/* prevent from overflowing the plane
-	if ((direction == "w" && forward_backward_move > plane_z - 1) ||
-		(direction == "s" && forward_backward_move < -plane_z + 1)) {
-		resetBodyWall();
-		return;
-	}*/
-
 	if (direction == "a") right_left_move += speed;
 	if (direction == "d") right_left_move -= speed;
 
@@ -82,13 +62,6 @@ void walkX(string direction) {
 
 //function for walking on the y axis
 void walkY(string direction) {
-	/* prevent from overflowing the plane
-	if ((direction == "w" && forward_backward_move > plane_z - 1) ||
-		(direction == "s" && forward_backward_move < -plane_z + 1)) {
-		resetBodyWall();
-		return;
-	}*/
-
 	if (direction == "q") up_down_move += speed;
 	if (direction == "e") up_down_move -= speed;
 
@@ -103,21 +76,14 @@ void walkY(string direction) {
 
 //function for walking on the z axis
 void walkZ(float degree, string direction) {
-	/* prevent from overflowing the plane
-	if ((direction == "w" && forward_backward_move > plane_z - 1) ||
-		(direction == "s" && forward_backward_move < -plane_z + 1)) {
-		resetBodyWall();
-		return;
-	}*/
-
 	if (direction == "w") forward_backward_move += speed;
 	if (direction == "s") forward_backward_move -= speed;
 
 	//rotate hands
 	Worlds[6] = PositionFinder(3.0f, 0, new float[3] {-1.85f - right_left_move, -1.6f + up_down_move,
-		0.0f - forward_backward_move}, 3.14 / 2, rotation_degree, "x", "x");
+		0.0f - forward_backward_move}, rotation_degree, "x");
 	Worlds[7] = PositionFinder(3.0f, 0, new float[3] {+1.85f - right_left_move, -1.6f + up_down_move,
-		0.0f - forward_backward_move}, 3.14 / 2, -rotation_degree, "x", "x");
+		0.0f - forward_backward_move}, -rotation_degree, "x");
 
 	Device->SetTransform(D3DTS_WORLD, &Worlds[6]);
 	Objects[6]->DrawSubset(0);
@@ -126,9 +92,9 @@ void walkZ(float degree, string direction) {
 
 	//rotate legs
 	Worlds[10] = PositionFinder(3.0f, 0, new float[3] {-1.0f - right_left_move, -4.8f + up_down_move,
-		0.0f - forward_backward_move}, 3.14 / 2, rotation_degree, "x", "x");
+		0.0f - forward_backward_move}, rotation_degree, "x");
 	Worlds[11] = PositionFinder(3.0f, 0, new float[3] {1.0f - right_left_move, -4.8f + up_down_move,
-		0.0f - forward_backward_move}, 3.14 / 2, -rotation_degree, "x", "x");
+		0.0f - forward_backward_move}, -rotation_degree, "x");
 
 	Device->SetTransform(D3DTS_WORLD, &Worlds[10]);
 	Objects[10]->DrawSubset(0);
@@ -143,14 +109,6 @@ void walkZ(float degree, string direction) {
 		for (int i = 0; i < 11 + 1; i++)
 			translate(&Worlds[i], 0.0f, 0.0f, speed);
 }
-
-//void earth_and_sky() {
-//	D3DXVECTOR3 normal(0.0f, 1.0f, 0.0f);
-//	float distance = 0.0f;
-//	D3DXPLANE plane;
-//	CreatePlane(normal, distance, &plane);
-//}
-
 
 //
 // Framework Functions
@@ -244,7 +202,6 @@ bool Setup()
 	Mtrls[12] = d3d::BLUE_MTRL;
 	Mtrls[13] = d3d::GREEN_MTRL;
 
-	//earth_and_sky();
 
 	//
 	// Setup a directional light.
@@ -492,69 +449,37 @@ static int WINAPI WinMain(HINSTANCE hinstance,
 	return 0;
 }
 // function to find the position of objects after rotating in given axes
-D3DXMATRIX PositionFinder(float length, float lengthBefore, float elementPosition[], float degreeOrigin,
-	float degreeFinal, string directionOrigin, string directionFinal) {
+D3DXMATRIX PositionFinder(float length, float previous_length, float objects_[],
+						  float degree, string direction) {
 
-	D3DXMATRIX tra2Origin;
-	D3DXMatrixIdentity(&tra2Origin);
+	D3DXMATRIX origin;
+	D3DXMatrixIdentity(&origin);
 
-	D3DXMATRIX rotInOrigin;
-	//D3DXMatrixRotationX(&rotInOrigin, degreeOrigin);
-	if (directionOrigin == "x")
-		rotInOrigin = D3DXMATRIX(1, 0, 0, 0,
-			0, cosf(degreeOrigin), sinf(degreeOrigin), 0,
-			0, -sinf(degreeOrigin), cosf(degreeOrigin), 0,
-			0, 0, 0, 1);
+	D3DXMATRIX rotator;
+	if (direction == "x")
+		rotator = D3DXMATRIX(1, 0, 0, 0,
+							 0, cosf(degree), sinf(degree), 0,
+							 0, -sinf(degree), cosf(degree), 0,
+							 0, 0, 0, 1);
 
-	else if (directionOrigin == "y")
-		rotInOrigin = D3DXMATRIX(cosf(degreeOrigin), 0, -sinf(degreeOrigin), 0,
-			0, 1, 0, 0,
-			sinf(degreeOrigin), 0, cosf(degreeOrigin), 0,
-			0, 0, 0, 1);
-
-	else
-		rotInOrigin = D3DXMATRIX(cosf(degreeOrigin), sinf(degreeOrigin), 0, 0,
-			-sinf(degreeOrigin), cosf(degreeOrigin), 0, 0,
-			0, 0, 1, 0,
-			0, 0, 0, 1);
-
-	D3DXMATRIX tra2Length(1, 0, 0, 0,
-						  0, 1, 0, 0,
-					      0, 0, 1, 0,
-						  0, -lengthBefore - length / 2, 0, 1);
-
-
-	D3DXMATRIX rotFromLength;
-	//D3DXMatrixRotationX(&rotFromLength, degreeFinal);
-	if (directionFinal == "x")
-		rotFromLength = D3DXMATRIX(1, 0, 0, 0,
-			0, cosf(degreeFinal), sinf(degreeFinal), 0,
-			0, -sinf(degreeFinal), cosf(degreeFinal), 0,
-			0, 0, 0, 1);
-
-	else if (directionFinal == "y")
-		rotFromLength = D3DXMATRIX(cosf(degreeFinal), 0, -sinf(degreeFinal), 0,
-			0, 1, 0, 0,
-			sinf(degreeFinal), 0, cosf(degreeFinal), 0,
-			0, 0, 0, 1);
+	else if (direction == "y")
+		rotator = D3DXMATRIX(cosf(degree), 0, -sinf(degree), 0,
+							 0, 1, 0, 0,
+							 sinf(degree), 0, cosf(degree), 0,
+							 0, 0, 0, 1);
 
 	else
-		rotFromLength = D3DXMATRIX(cosf(degreeFinal), sinf(degreeFinal), 0, 0,
-			-sinf(degreeFinal), cosf(degreeFinal), 0, 0,
-			0, 0, 1, 0,
-			0, 0, 0, 1);
+		rotator = D3DXMATRIX(cosf(degree), sinf(degree), 0, 0,
+						     -sinf(degree), cosf(degree), 0, 0,
+							 0, 0, 1, 0,
+							 0, 0, 0, 1);
 
 
-	D3DXMATRIX tra2Final(1, 0, 0, 0,
+	D3DXMATRIX ultimate(1, 0, 0, 0,
 						 0, 1, 0, 0,
 						 0, 0, 1, 0,
-						elementPosition[0], elementPosition[1] + lengthBefore + length / 2, elementPosition[2], 1);
+						objects_[0], objects_[1] + previous_length + length / 2, objects_[2], 1);
 
-	D3DXMATRIX result = tra2Origin * rotFromLength * tra2Final;
+	D3DXMATRIX result = origin * rotator * ultimate;
 	return result;
 }
-
-//void CreatePlane(D3DXVECTOR3 normal, float distance, D3DXPLANE* plane) {
-//	D3DXPlaneFromPointNormal(plane, &D3DXVECTOR3(0, 0, 0), &normal);
-//	plane->d = -distance;
-//}
