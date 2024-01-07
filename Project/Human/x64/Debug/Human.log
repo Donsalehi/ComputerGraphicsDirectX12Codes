@@ -1,0 +1,189 @@
+﻿  Human.cpp
+E:\drive c\human\Human\Human.h(119,39): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(121,39): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(130,39): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(132,39): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(166,34): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(166,29): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(166,24): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(206,44): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(206,37): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(209,43): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(209,36): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(212,42): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(215,41): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(218,38): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(221,37): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.h(559,46): error C2102: '&' requires l-value
+  (compiling source file 'Human.cpp')
+  
+E:\drive c\human\Human\Human.cpp(29,5): error C2374: 'n': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(29,5):
+  see declaration of 'n'
+  
+E:\drive c\human\Human\Human.cpp(31,19): error C2374: 'Device': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(31,19):
+  see declaration of 'Device'
+  
+E:\drive c\human\Human\Human.cpp(33,11): error C2374: 'Width': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(33,11):
+  see declaration of 'Width'
+  
+E:\drive c\human\Human\Human.cpp(34,11): error C2374: 'Height': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(34,11):
+  see declaration of 'Height'
+  
+E:\drive c\human\Human\Human.cpp(36,12): error C2374: 'Objects': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(36,12):
+  see declaration of 'Objects'
+  
+E:\drive c\human\Human\Human.cpp(37,13): error C2086: 'D3DXMATRIX Worlds[18]': redefinition
+  E:\drive c\human\Human\Human.h(37,13):
+  see declaration of 'Worlds'
+  
+E:\drive c\human\Human\Human.cpp(38,14): error C2086: 'D3DMATERIAL9 Mtrls[18]': redefinition
+  E:\drive c\human\Human\Human.h(38,14):
+  see declaration of 'Mtrls'
+  
+E:\drive c\human\Human\Human.cpp(40,7): error C2374: 'rotation_degree': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(40,7):
+  see declaration of 'rotation_degree'
+  
+E:\drive c\human\Human\Human.cpp(43,7): error C2374: 'right_left_move': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(43,7):
+  see declaration of 'right_left_move'
+  
+E:\drive c\human\Human\Human.cpp(44,7): error C2374: 'up_down_move': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(44,7):
+  see declaration of 'up_down_move'
+  
+E:\drive c\human\Human\Human.cpp(45,7): error C2374: 'forward_backward_move': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(45,7):
+  see declaration of 'forward_backward_move'
+  
+E:\drive c\human\Human\Human.cpp(48,7): error C2374: 'speed': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(48,7):
+  see declaration of 'speed'
+  
+E:\drive c\human\Human\Human.cpp(51,8): error C2374: 'last_move': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(51,8):
+  see declaration of 'last_move'
+  
+E:\drive c\human\Human\Human.cpp(54,6): error C2374: 'hands_move_forward': redefinition; multiple initialization
+  E:\drive c\human\Human\Human.h(54,6):
+  see declaration of 'hands_move_forward'
+  
+E:\drive c\human\Human\Human.cpp(57,6): error C2084: function 'void translate(D3DXMATRIX *,float,float,float)' already has a body
+  E:\drive c\human\Human\Human.h(57,6):
+  see previous definition of 'translate'
+  
+E:\drive c\human\Human\Human.cpp(64,6): error C2084: function 'void walkX(std::string)' already has a body
+  E:\drive c\human\Human\Human.h(64,6):
+  see previous definition of 'walkX'
+  
+E:\drive c\human\Human\Human.cpp(78,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(81,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(85,6): error C2084: function 'void walkY(std::string)' already has a body
+  E:\drive c\human\Human\Human.h(85,6):
+  see previous definition of 'walkY'
+  
+E:\drive c\human\Human\Human.cpp(99,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(102,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(106,6): error C2084: function 'void walkZ(float,std::string)' already has a body
+  E:\drive c\human\Human\Human.h(106,6):
+  see previous definition of 'walkZ'
+  
+E:\drive c\human\Human\Human.cpp(119,39): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\drive c\human\Human\Human.cpp(121,39): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\drive c\human\Human\Human.cpp(130,39): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\drive c\human\Human\Human.cpp(132,39): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\drive c\human\Human\Human.cpp(142,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(145,4): error C2065: 'translate': undeclared identifier
+E:\drive c\human\Human\Human.cpp(148,6): error C2084: function 'void earth_and_sky(void)' already has a body
+  E:\drive c\human\Human\Human.h(148,6):
+  see previous definition of 'earth_and_sky'
+  
+E:\drive c\human\Human\Human.cpp(159,6): error C2084: function 'bool Setup(void)' already has a body
+  E:\drive c\human\Human\Human.h(159,6):
+  see previous definition of 'Setup'
+  
+E:\drive c\human\Human\Human.cpp(166,34): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(166,29): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(166,24): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(206,44): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(206,37): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(209,43): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(209,36): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(212,42): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(215,41): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(218,38): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(221,37): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
+E:\drive c\human\Human\Human.cpp(248,2): error C2065: 'earth_and_sky': undeclared identifier
+E:\drive c\human\Human\Human.cpp(289,6): error C2084: function 'void Cleanup(void)' already has a body
+  E:\drive c\human\Human\Human.h(289,6):
+  see previous definition of 'Cleanup'
+  
+E:\drive c\human\Human\Human.cpp(295,6): error C2084: function 'bool Display(float)' already has a body
+  E:\drive c\human\Human\Human.h(295,6):
+  see previous definition of 'Display'
+  
+E:\drive c\human\Human\Human.cpp(323,6): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(330,6): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(346,5): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(362,6): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(369,6): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(385,5): error C2065: 'walkZ': undeclared identifier
+E:\drive c\human\Human\Human.cpp(397,4): error C2065: 'walkX': undeclared identifier
+E:\drive c\human\Human\Human.cpp(402,4): error C2065: 'walkX': undeclared identifier
+E:\drive c\human\Human\Human.cpp(408,4): error C2065: 'walkY': undeclared identifier
+E:\drive c\human\Human\Human.cpp(413,4): error C2065: 'walkY': undeclared identifier
+E:\drive c\human\Human\Human.cpp(450,23): error C2084: function 'LRESULT d3d::WndProc(HWND,UINT,WPARAM,LPARAM)' already has a body
+  E:\drive c\human\Human\Human.h(450,23):
+  see previous definition of 'WndProc'
+  
+E:\drive c\human\Human\Human.cpp(469,19): error C2084: function 'int WinMain(HINSTANCE,HINSTANCE,LPSTR,int)' already has a body
+  E:\drive c\human\Human\Human.h(469,19):
+  see previous definition of 'WinMain'
+  
+E:\drive c\human\Human\Human.cpp(481,7): error C2065: 'Setup': undeclared identifier
+E:\drive c\human\Human\Human.cpp(481,6): warning C4551: function call missing argument list
+E:\drive c\human\Human\Human.cpp(489,2): error C2065: 'Cleanup': undeclared identifier
+E:\drive c\human\Human\Human.cpp(496,12): error C2084: function 'D3DXMATRIX PositionFinder(float,float,float [],float,float,std::string,std::string)' already has a body
+  E:\drive c\human\Human\Human.h(496,12):
+  see previous definition of 'PositionFinder'
+  
+E:\drive c\human\Human\Human.cpp(558,6): error C2084: function 'void CreatePlane(D3DXVECTOR3,float,D3DXPLANE *)' already has a body
+  E:\drive c\human\Human\Human.h(558,6):
+  see previous definition of 'CreatePlane'
+  
+E:\drive c\human\Human\Human.cpp(559,46): error C2102: '&' requires l-value

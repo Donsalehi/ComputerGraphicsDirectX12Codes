@@ -1,16 +1,2 @@
-﻿  d3dUtility.cpp
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\d3dUtility.cpp(147,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
-  directionalLight.cpp
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(42,34): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(42,29): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(42,24): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(82,45): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(82,38): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(85,43): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(85,36): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(88,42): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(91,41): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(94,38): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\Human\directionalLight.cpp(97,37): warning C4305: 'argument': truncation from 'double' to 'FLOAT'
-  Generating Code...
+﻿  LINK : C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\x64\Debug\Human.exe not found or not built by the last incremental link; performing full link
   Human.vcxproj -> C:\Users\firedragon\Desktop\graphic\ComputerGraphicsDirectX12Codes\Homework5\x64\Debug\Human.exe
